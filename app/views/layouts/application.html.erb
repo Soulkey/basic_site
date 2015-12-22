@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BasicSite</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<ul id="main-nav">
+<li><%= link_to 'HOME', root_path %></li>
+<li><%= link_to 'ABOUT', static_pages_about_path %></li>
+<li><%= link_to 'PRODUCTS', static_pages_products_path %></li>
+<li><%= link_to 'CONTACT', static_pages_contact_path %></li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>
