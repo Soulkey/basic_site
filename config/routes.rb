@@ -1,27 +1,20 @@
 Rails.application.routes.draw do
   
   get 'sessions/new'
-
   get 'users/new'
-
-  resources :microposts
-  resources :users
-  
   get 'static_pages/home'
-
   get 'about' => 'static_pages#about'
-
   get 'products' => 'static_pages#products'
-  
   get 'contact' => 'static_pages#contact'
-  
   get 'help' => 'static_pages#help'
-  
   get 'signup' => 'users#new'
-  
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  
+  resources :microposts
+  resources :users
+  resources :account_activations, only: [:edit]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -29,6 +22,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  
   root 'static_pages#home'
 
   # Example of regular route:
